@@ -10,40 +10,38 @@ Import
 
 # Usage
 
-If no salt present
+If you don't have a salt, just pass the blank string ```""```
 
 ```go
 
 package main
 
 import (
-  "fmt"
-  "github.com/skunkworker/go-devise-encryptor"
+	"fmt"
+
+	"github.com/skunkworker/go-devise-encryptor"
 )
 
 func main() {
-  password := "changeme"
-  stretches := 10
-  pepper := "a really bad pepper"
+	password := "changeme"
+	stretches := 10
+	pepper := "a really bad pepper"
 
-  err, hashedPassword := devisecrypto.Digest(password,stretches,pepper)
-  if err != nil {
-    panic(err)
-  }
-  fmt.Println("hashedPassword: ",hashedPassword)
+	hashedPassword, err := devisecrypto.Digest(password, stretches, pepper)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("hashedPassword: ", hashedPassword)
 
-  // and to compare with a previously hashed password
+	// and to compare with a previously hashed password
 
-  newPassword := "changemeagain"
+	newPassword := "changeme"
 
-  err, val := devisecrypto.Compare(newPassword,pepper,hashedPassword)
+	val := devisecrypto.Compare(newPassword, pepper, hashedPassword)
 
-  if err != nil {
-    panic(err)
-  }
-
-  if val {
-    fmt.Println("Passwords are the same")
-  }
+	if val {
+		fmt.Println("Passwords are the same ")
+	}
 
 }
+```
