@@ -1,9 +1,6 @@
 package devisecrypto
 
 import (
-	// "bytes"
-	// "golang.org/x/crypto/bcrypt"
-
   "testing"
 )
 
