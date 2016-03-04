@@ -40,6 +40,12 @@ func TestCompare(t *testing.T)  {
     t.Errorf("The hashed password should be identical to the original when given the same inputs and internal salt")
   }
 
+  t.Log("Testing compare with a pepper but no hashedPassword")
+
+  if Compare(password, pepper, "") != false {
+    t.Errorf("If the hashedPassword is blank it should return false")
+  }
+
   pepper = ""
 
   hashedPassword,_ = Digest(password, stretches, pepper)
@@ -50,10 +56,10 @@ func TestCompare(t *testing.T)  {
     t.Errorf("The hashed password should be identical to the original when given the same inputs and internal salt, when a pepper is not present")
   }
 
-  t.Log("Testing compare with no hashedPassword provided")
+  t.Log("Testing compare with no pepper and no hashedPassword")
 
   if Compare(password, pepper, "") != false {
-    t.Errorf("If the hashedPassword is blank it should return false")
+    t.Errorf("compare should be false when there is no pepper for both and no hashedpassword")
   }
 
 }
