@@ -4,15 +4,15 @@ Ruby's bcrypt implementation uses the 2a algorithm, and golang's bcrypt implemen
 
 [![Travis status][build-logo]][build-link]
 
-[build-logo]:https://api.travis-ci.org/skunkworker/go-devise-encryptor.svg
-[build-link]:https://travis-ci.org/skunkworker/go-devise-encryptor
+[build-logo]:https://api.travis-ci.org/consyse/go-devise-encryptor.svg
+[build-link]:https://travis-ci.org/consyse/go-devise-encryptor
 
 # Installation
 
-    go get github.com/skunkworker/go-devise-encryptor
+    go get github.com/consyse/go-devise-encryptor
 Import
 
-    import "github.com/skunkworker/go-devise-encryptor"
+    import "github.com/consyse/go-devise-encryptor"
 
 # Usage
 
@@ -25,7 +25,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/skunkworker/go-devise-encryptor"
+	"github.com/consyse/go-devise-encryptor"
 )
 
 func main() {
